@@ -1,0 +1,359 @@
+* { 
+    box-sizing: border-box; 
+    margin: 0; 
+    padding: 0; 
+}
+
+body, html { 
+    height: 100%; 
+    font-family: 'Segoe UI', Tahoma, sans-serif; 
+    background: #000; 
+    overflow-x: hidden;
+}
+
+/* NAVBAR */
+.navbar {
+    width: 100%; 
+    position: fixed; 
+    top: 0; 
+    left: 0; 
+    z-index: 1000; 
+    min-height: 80px;
+    display: flex; 
+    align-items: center;
+    background-color: rgba(10, 10, 10, 0.85); 
+    backdrop-filter: blur(10px); 
+    -webkit-backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+}
+
+.nav-container.main-nav-layout {
+    width: 100%; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    padding: 0 60px; 
+    gap: 40px;
+}
+
+.nav-logo a { 
+    color: white; 
+    text-decoration: none; 
+    font-size: 22px; 
+    font-weight: 900; 
+    letter-spacing: 2px; 
+    text-transform: uppercase; 
+    white-space: nowrap; 
+}
+
+.nav-separator { 
+    width: 1.5px; 
+    height: 30px; 
+    background-color: rgba(255, 255, 255, 0.3); 
+}
+
+.nav-links { 
+    list-style: none; 
+    display: flex; 
+    gap: 25px; 
+}
+
+.nav-links > li > a { 
+    color: white; 
+    text-decoration: none; 
+    font-weight: 600; 
+    font-size: 16px; 
+    padding: 10px 0; 
+    display: block; 
+    transition: 0.3s;
+}
+
+.nav-links > li > a:hover { color: #bbb; }
+
+.dropdown { position: relative; }
+.dropdown-content {
+    display: none; 
+    position: absolute; 
+    background-color: #0c0c0c;
+    min-width: 200px; 
+    top: 100%; 
+    left: 50%; 
+    transform: translateX(-50%);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.8); 
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-top: 3px solid #ffffff; 
+    padding: 10px 0; 
+    z-index: 1100;
+}
+
+.dropdown-content a { 
+    color: #ddd; 
+    padding: 12px 20px; 
+    display: block; 
+    text-decoration: none; 
+    font-size: 15px; 
+    text-align: left; 
+}
+
+.dropdown-content a:hover { 
+    background-color: rgba(255, 255, 255, 0.1); 
+    color: white; 
+}
+
+.dropdown:hover .dropdown-content { display: block; }
+
+/* TEMALAR */
+.hero-section { 
+    min-height: 100vh; 
+    width: 100%; 
+    background-size: cover; 
+    background-position: center; 
+    background-attachment: fixed; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center;
+    padding-top: 80px;
+}
+
+.home-theme  { background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.8)), url('images/home-bg.jpg'); }
+.pre-theme   { background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.8)), url('images/pre-bg.png'); }
+.paleo-theme { background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.8)), url('images/paleo-bg.png'); }
+.mezo-theme  { background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.8)), url('images/mezo-bg.png'); }
+.seno-theme  { background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.8)), url('images/seno-bg.png'); }
+
+.hero-content { 
+    width: 100%;
+    max-width: 850px; 
+    color: white; 
+    text-align: center; 
+    padding: 40px 20px; 
+}
+
+.hero-content:has(.summary-flex-container) {
+    max-width: 1150px;
+}
+
+.hero-content h1 { 
+    font-size: clamp(2rem, 8vw, 3.2rem);
+    font-weight: 900; 
+    margin-bottom: 25px; 
+    text-transform: uppercase; 
+}
+
+.description-text { 
+    background: rgba(0, 0, 0, 0.75); 
+    padding: 40px; 
+    border-radius: 20px; 
+    border: 1px solid rgba(255, 255, 255, 0.1); 
+    display: flex;
+    flex-direction: column;
+}
+
+.summary-flex-container {
+    display: flex;
+    align-items: flex-start;
+    gap: 30px;
+    margin-top: 25px;
+    width: 100%;
+}
+
+.summary-desc {
+    flex: 1;
+    text-align: left;
+    line-height: 1.7;
+    font-size: 1.1rem;
+}
+
+.content-image-box {
+    flex: 0 0 380px; 
+    background: rgba(255, 255, 255, 0.03);
+    padding: 12px;
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    text-align: center;
+}
+
+.content-img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6);
+}
+
+.image-caption {
+    margin-top: 15px;
+    font-size: 0.9rem;
+    font-style: italic;
+    color: rgba(255, 255, 255, 0.6);
+    line-height: 1.5;
+    text-align: left;
+}
+
+.info-divider { 
+    height: 1px; 
+    background: linear-gradient(to right, transparent, rgba(255,255,255,0.3), transparent); 
+    margin: 20px 0; 
+}
+
+.hero-buttons { 
+    text-align: center; 
+    margin-top: 50px; 
+    width: 100%;
+    position: relative;
+    z-index: 10;
+}
+
+.btn { 
+    display: inline-block; 
+    padding: 15px 45px; 
+    border: 2px solid white; 
+    color: white; 
+    text-decoration: none; 
+    font-weight: bold; 
+    text-transform: uppercase; 
+    border-radius: 4px; 
+    transition: 0.3s; 
+    background: transparent;
+}
+
+.btn:hover { 
+    background: white; 
+    color: black !important; 
+    transform: translateY(-3px); 
+}
+
+/* İLETİŞİM */
+.contact-section {
+    padding: 80px 20px;
+    background-color: #0c0c0c;
+    color: white;
+    text-align: center;
+}
+
+.contact-container {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.contact-section h2 {
+    font-size: clamp(1.8rem, 6vw, 2.5rem);
+    font-weight: 900;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+.contact-section p {
+    color: #aaaaaa;
+    margin-bottom: 30px;
+    font-size: 1.1rem;
+}
+
+.social-media {
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: center;
+}
+
+.instagram-link {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    color: white;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 10px 20px;
+    border-radius: 50px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: 0.3s ease;
+}
+
+.social-icon { width: 30px; height: 30px; object-fit: contain; }
+
+.instagram-link:hover {
+    background: rgba(255, 255, 255, 0.15);
+    border-color: #E1306C;
+}
+
+.contact-form { display: flex; flex-direction: column; gap: 15px; }
+
+.form-group input, .form-group textarea {
+    width: 100%;
+    padding: 15px;
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    color: white;
+    font-family: inherit;
+    font-size: 1rem;
+}
+
+/* FOOTER */
+.site-footer { 
+    background-color: #000; 
+    color: #aaaaaa; 
+    padding: 50px 20px; 
+    border-top: 1px solid rgba(255, 255, 255, 0.1); 
+    width: 100%; 
+}
+
+.footer-container { 
+    max-width: 1100px; 
+    margin: 0 auto; 
+    text-align: center; 
+}
+
+.footer-logo { width: clamp(180px, 30vw, 250px); height: auto; margin-bottom: 20px; }
+
+/* MOBİL UYUMLULUK */
+@media (max-width: 992px) {
+    .nav-container.main-nav-layout { padding: 0 30px; gap: 20px; }
+    .hero-content { max-width: 90%; }
+}
+
+@media (max-width: 768px) {
+   
+    .navbar { 
+        position: relative;
+        height: auto; 
+        padding: 20px 0; 
+    }
+    .nav-container.main-nav-layout { 
+        flex-direction: column; 
+        gap: 15px; 
+        padding: 0 15px; 
+    }
+    .nav-separator { display: none; }
+    .nav-links { 
+        flex-wrap: wrap; 
+        justify-content: center; 
+        gap: 10px; 
+    }
+    .nav-links > li > a { padding: 5px 10px; font-size: 14px; }
+    
+    .summary-flex-container { 
+        flex-direction: column; 
+        align-items: center;
+    }
+    .summary-desc { text-align: center; }
+    .content-image-box { 
+        flex: none; 
+        width: 100%; 
+        max-width: 400px;
+        margin-top: 25px; 
+    }
+
+    .hero-content { padding-top: 20px; }
+    .description-text { padding: 25px 15px; }
+    
+    .btn { width: 100%; text-align: center; padding: 15px 20px; }
+    .hero-buttons { margin-top: 30px; }
+
+    .hero-section { background-attachment: scroll; }
+}
+
+@media (max-width: 480px) {
+    .nav-logo a { font-size: 18px; }
+    .hero-content h1 { margin-bottom: 15px; }
+    .instagram-link span { font-size: 12px; }
+}
